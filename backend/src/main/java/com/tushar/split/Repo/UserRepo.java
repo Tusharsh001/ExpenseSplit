@@ -1,0 +1,20 @@
+package com.tushar.split.Repo;
+
+
+import com.tushar.split.Model.Users;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface UserRepo extends JpaRepository<Users, Integer> {
+
+    Optional<Users> findByUsername(String username);
+    Optional<Users> findByEmail(String username);
+
+
+    List<Users> findAllById(List<Long> memberIds);
+}
