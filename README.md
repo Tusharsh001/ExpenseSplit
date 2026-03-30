@@ -1,4 +1,4 @@
-# 💰 Splittwise - Smart Expense Sharing Application
+#  Splittwise - Smart Expense Sharing Application
 
 <div align="center">
 
@@ -12,25 +12,25 @@
 
 ---
 
-## 📖 **About The Project**
+##**About The Project**
 
 **Splittwise** is a full-stack expense sharing application that helps groups of friends track shared expenses, split bills, and manage debts efficiently. Whether you're planning a trip, sharing rent with roommates, or splitting dinner bills, Splittwise makes it easy to keep track of who owes whom.
 
-### ✨ **Key Features**
+###**Key Features**
 
 | Feature | Description |
 |---------|-------------|
-| 🔐 **Secure Authentication** | JWT-based authentication with email OTP verification |
-| 👥 **Group Management** | Create groups, add/remove members, leave groups |
-| 💰 **Expense Tracking** | Support for EQUAL, PERCENTAGE, and EXACT split types |
-| 📊 **Smart Balance Calculation** | Real-time balance tracking and debt simplification |
-| 🎯 **Debt Simplification** | Minimizes transactions to settle debts |
-| 📱 **Responsive UI** | Modern dashboard with mobile-first design |
-| 🔔 **Email Notifications** | OTP verification and expense alerts |
+|**Secure Authentication** | JWT-based authentication with email OTP verification |
+|**Group Management** | Create groups, add/remove members, leave groups |
+|**Expense Tracking** | Support for EQUAL, PERCENTAGE, and EXACT split types |
+|**Smart Balance Calculation** | Real-time balance tracking and debt simplification |
+|**Debt Simplification** | Minimizes transactions to settle debts |
+|**Responsive UI** | Modern dashboard with mobile-first design |
+|**Email Notifications** | OTP verification and expense alerts |
 
 ---
 
-## 🏗️ **System Architecture**
+##**System Architecture**
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
@@ -64,34 +64,34 @@
 
 ---
 
-## 🛠️ **Tech Stack**
+##**Tech Stack**
 
 ### **Backend**
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| Java | 17 | Core programming language |
-| Spring Boot | 3.x | Application framework |
-| Spring Security | 3.x | Authentication & Authorization |
-| Spring Data JPA | 3.x | Database operations |
-| JWT | 0.11.5 | Token-based authentication |
-| MySQL | 8.0 | Primary database |
+| Technology |  Purpose |
+|------------|-----------------|
+| Java | Core programming language |
+| Spring Boot | Application framework |
+| Spring Security | Authentication & Authorization |
+| Spring Data JPA | Database operations |
+| JWT  | Token-based authentication |
+| MySQL | Primary database |
 | Hibernate | 6.x | ORM framework |
-| Maven | 3.9+ | Build automation |
-| Lombok | 1.18.30 | Boilerplate code reduction |
+| Maven | Build automation |
+| Lombok  | Boilerplate code reduction |
 | JavaMail | - | Email service (SMTP) |
 
 ### **Frontend**
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| React | 18.2 | UI framework |
-| React Router DOM | 6.8 | Client-side routing |
-| Axios | 1.3 | HTTP client |
-| Vite | 4.x | Build tool |
-| CSS3 | - | Styling |
+| Technology | Purpose |
+|------------|---------|
+| React | UI framework |
+| React Router DOM | Client-side routing |
+| Axios | HTTP client |
+| Vite | Build tool |
+| CSS3  | Styling |
 
 ---
 
-## 📁 **Project Structure**
+## **Project Structure**
 
 ```
 splittwise/
@@ -150,7 +150,7 @@ splittwise/
 
 ---
 
-## 📊 **Database Schema**
+## **Database Schema**
 
 ### **Entity Relationships**
 
@@ -180,7 +180,7 @@ splittwise/
 
 ---
 
-## 🚀 **Getting Started**
+##  **Getting Started**
 
 ### **Prerequisites**
 
@@ -230,7 +230,7 @@ echo "VITE_API_URL=http://localhost:8080" > .env
 npm run dev
 ```
 
-## 🧮 **Debt Simplification Algorithm**
+##**Debt Simplification Algorithm**
 
 The algorithm minimizes the number of transactions needed to settle debts:
 
@@ -255,14 +255,14 @@ Result: Bob → Alice: 30, Charlie → Alice: 30, David → Alice: 30
 
 ---
 
-## 🔒 **Security Features**
+## **Security Features**
 
-- ✅ **JWT Authentication** - Stateless token-based authentication
-- ✅ **Password Encryption** - BCrypt hashing
-- ✅ **Email Verification** - OTP validation for new accounts
-- ✅ **Role-Based Access** - Creator privileges for group operations
-- ✅ **CORS Configuration** - Restricted to frontend origin
-- ✅ **SQL Injection Prevention** - JPA parameterized queries
+- **JWT Authentication** - Stateless token-based authentication
+- **Password Encryption** - BCrypt hashing
+- **Email Verification** - OTP validation for new accounts
+- **Role-Based Access** - Creator privileges for group operations
+- **CORS Configuration** - Restricted to frontend origin
+- **SQL Injection Prevention** - JPA parameterized queries
 
 ---
 
