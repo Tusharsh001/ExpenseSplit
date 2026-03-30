@@ -1,6 +1,7 @@
 package com.tushar.split.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.tushar.split.DTO.expense.SplitType;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,16 +18,17 @@ public class Expense {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     @Column(length = 100)
     private String description;
     @Column(precision = 10, scale = 2)
     private BigDecimal amount;
     private LocalDateTime createdAt;
     @ManyToOne
-    private SplitGroups groups;
+    private SplitGroups group;
     @ManyToOne
     private Users paidBy;
+    private SplitType splitType;
 
 
     @OneToMany(mappedBy = "expense")

@@ -10,7 +10,7 @@ import java.util.List;
 @NoArgsConstructor
 public class GroupResponse {
 
-    private Long id;
+    private int id;
     private String name;
     private String description;
     private UserSummary createdBy;
@@ -19,4 +19,5 @@ public class GroupResponse {
     private LocalDateTime createdAt;
     private LocalDateTime lastUpdate;
     private Boolean isAdmin;
+    private String userBalance;
 }

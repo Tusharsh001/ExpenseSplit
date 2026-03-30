@@ -1,17 +1,15 @@
 package com.tushar.split.DTO;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserSummary {
-
-    private int id;
-    private String username;
-    private String email;
+public class BalanceEntry {
+    private int userId;
+    private BigDecimal amount;
 }

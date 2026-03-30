@@ -30,52 +30,55 @@ public class GroupContoller {
 
     ///  get group but id
     @GetMapping("/{groupId}")
-    public ResponseEntity<GroupResponse> getGroupById(@PathVariable Long groupId ){
-      GroupResponse response=groupService.getGroupById(id);
+    public ResponseEntity<GroupResponse> getGroupById(@PathVariable int groupId ){
+      GroupResponse response=groupService.getGroupById(groupId);
       return ResponseEntity.ok(response);
     }
 
 
-    ///  get all the groups of the
+    ///  get all the groups of the user
     @GetMapping("/my-groups")
     public ResponseEntity<List<GroupResponse>> getUserGroups() {
+
         Authentication auth=SecurityContextHolder.getContext().getAuthentication();
         String username= auth.getName();
+
+        System.out.println(auth.getDetails().toString());
         List<GroupResponse> responses = groupService.getUserGroups(username);
         return ResponseEntity.ok(responses);
     }
 
     /// update the group name
     @PutMapping("{groupId}")
-    public ResponseEntity<GroupResponse> updateGroup(@PathVariable Long groupId , @RequestBody GroupDto request){
+    public ResponseEntity<GroupResponse> updateGroup(@PathVariable int groupId , @RequestBody GroupDto request){
         GroupResponse response=groupService.updateGroup(groupId,request);
         return ResponseEntity.ok(response);
     }
 
     /// add members to group
     @PostMapping("/{groupId}/members")
-    public ResponseEntity<GroupResponse> addMembers(@PathVariable Long groupId , @RequestBody GroupDto request){
-        GroupResponse response=groupService.addMembers(groupId,request);
+    public ResponseEntity<GroupResponse> addMembers(@PathVariable int groupId , @RequestBody List<Integer> membersId){
+        GroupResponse response=groupService.addMembers(groupId,membersId);
         return ResponseEntity.ok(response);
     }
 
     /// delete member from the group
     @DeleteMapping("/{groupId}/members/{userId}")
-    public ResponseEntity<GroupResponse> removeMember(@PathVariable Long groupId, @PathVariable Long userId) {
+    public ResponseEntity<GroupResponse> removeMember(@PathVariable int groupId, @PathVariable Long userId) {
         GroupResponse response = groupService.removeMember(groupId, userId);
         return ResponseEntity.ok(response);
     }
 
     ///  leave the group themselves
     @PostMapping("/{groupId}/leave")
-    public ResponseEntity<GroupResponse> leaveGroup(@PathVariable Long groupId) {
+    public ResponseEntity<GroupResponse> leaveGroup(@PathVariable int groupId) {
         GroupResponse response = groupService.leaveGroup(groupId);
         return ResponseEntity.ok(response);
     }
 
     ///  delete a group
     @DeleteMapping("/{groupId}")
-    public ResponseEntity<Void> deleteGroup(@PathVariable Long groupId) {
+    public ResponseEntity<Void> deleteGroup(@PathVariable int groupId) {
         groupService.deleteGroup(groupId);
         return ResponseEntity.noContent().build();
     }
@@ -83,9 +86,7 @@ public class GroupContoller {
 
     ///  search group by name
     @GetMapping("/search")
-    public ResponseEntity<List<GroupResponse>> searchGroups(
-            @RequestParam String query,
-            @RequestParam(defaultValue = "10") int limit) {
+    public ResponseEntity<List<GroupResponse>> searchGroups(@RequestParam String query, @RequestParam(defaultValue = "10") int limit) {
         List<GroupResponse> responses = groupService.searchGroups(query, limit);
         return ResponseEntity.ok(responses);
     }

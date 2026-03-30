@@ -23,12 +23,14 @@ public class JwtService {
 
     public String GenerateToken(String username){
 
-        return Jwts.builder()
+        String token= Jwts.builder()
                 .setSubject(username)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis()+(1000*60*15)))
                 .signWith(getSignKey())
                 .compact();
+        System.out.println("Token: "+token);
+        return token;
     }
 
 

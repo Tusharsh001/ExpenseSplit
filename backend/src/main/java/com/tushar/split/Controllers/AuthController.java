@@ -43,7 +43,7 @@ public class AuthController {
 //     Login
     @PostMapping("/login")
     public String loginUser( @RequestBody LoginRequestDto request) {
-
+        System.out.println(  request.toString());
         return userService.logIn(request);
     }
 //

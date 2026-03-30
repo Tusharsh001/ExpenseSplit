@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 public class OtpVerification {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
     private String email;
     private String otp;
     private LocalDateTime expireAt;

@@ -15,5 +15,5 @@ public class GroupDto {
     @NotBlank
     private String description;
 
-    private List<Long> memberIds;
+    private List<Integer> memberIds;
 }

@@ -4,13 +4,15 @@ package com.tushar.split.Model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.math.BigDecimal;
+
 @Entity
 @Data
 public class ExpenseSplit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @ManyToOne
     private Expense expense;
@@ -18,6 +20,7 @@ public class ExpenseSplit {
     @ManyToOne
     private Users user;
 
-    private double amount;
+    private BigDecimal amount;
+    private Double percentage;
 
 }
